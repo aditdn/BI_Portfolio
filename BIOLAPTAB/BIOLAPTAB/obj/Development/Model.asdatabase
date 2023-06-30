@@ -1,0 +1,1471 @@
+{
+  "name": "BIOLAPTAB",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer LAPTOP-0M8N7IP6 BIDWH",
+        "connectionString": "Provider=SQLNCLI11;Data Source=LAPTOP-0M8N7IP6;Initial Catalog=BIDWH;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "1465",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      },
+      {
+        "name": "SqlServer LAPTOP-0M8N7IP6 BIDWH 2",
+        "connectionString": "Provider=SQLNCLI11;Data Source=LAPTOP-0M8N7IP6;Initial Catalog=BIDWH;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "1465",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      },
+      {
+        "name": "SqlServer LAPTOP-0M8N7IP6 BIDWH 3",
+        "connectionString": "Provider=SQLNCLI11;Data Source=LAPTOP-0M8N7IP6;Initial Catalog=BIDWH;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "1465",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      },
+      {
+        "name": "SqlServer LAPTOP-0M8N7IP6 BIDWH 4",
+        "connectionString": "Provider=SQLNCLI11;Data Source=LAPTOP-0M8N7IP6;Initial Catalog=BIDWH;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "1465",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "dimCurrency",
+        "columns": [
+          {
+            "name": "CurrencyKey",
+            "dataType": "int64",
+            "sourceColumn": "CurrencyKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CurrencyAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "CurrencyAlternateKey",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CurrencyName",
+            "dataType": "string",
+            "sourceColumn": "CurrencyName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ETLDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ETLDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dimCurrency",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[dimCurrency].* FROM [dbo].[dimCurrency] ",
+              "dataSource": "SqlServer LAPTOP-0M8N7IP6 BIDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[dimCurrency].* FROM [dbo].[dimCurrency] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "dimCurrency"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "dimCustomer",
+        "columns": [
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "sourceProviderType": "Integer",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "GeographyKey",
+            "dataType": "int64",
+            "sourceColumn": "GeographyKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "CustomerAlternateKey",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Title",
+            "dataType": "string",
+            "sourceColumn": "Title",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CustomerName",
+            "dataType": "string",
+            "sourceColumn": "CustomerName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "NameStyle",
+            "dataType": "double",
+            "sourceColumn": "NameStyle",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "BirthDate",
+            "dataType": "dateTime",
+            "sourceColumn": "BirthDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "MaritalStatus",
+            "dataType": "string",
+            "sourceColumn": "MaritalStatus",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Suffix",
+            "dataType": "string",
+            "sourceColumn": "Suffix",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Gender",
+            "dataType": "string",
+            "sourceColumn": "Gender",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EmailAddress",
+            "dataType": "string",
+            "sourceColumn": "EmailAddress",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "YearlyIncome",
+            "dataType": "double",
+            "sourceColumn": "YearlyIncome",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "TotalChildren",
+            "dataType": "double",
+            "sourceColumn": "TotalChildren",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "NumberChildrenAtHome",
+            "dataType": "double",
+            "sourceColumn": "NumberChildrenAtHome",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "EnglishEducation",
+            "dataType": "string",
+            "sourceColumn": "EnglishEducation",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SpanishEducation",
+            "dataType": "string",
+            "sourceColumn": "SpanishEducation",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FrenchEducation",
+            "dataType": "string",
+            "sourceColumn": "FrenchEducation",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EnglishOccupation",
+            "dataType": "string",
+            "sourceColumn": "EnglishOccupation",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SpanishOccupation",
+            "dataType": "string",
+            "sourceColumn": "SpanishOccupation",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FrenchOccupation",
+            "dataType": "string",
+            "sourceColumn": "FrenchOccupation",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "HouseOwnerFlag",
+            "dataType": "double",
+            "sourceColumn": "HouseOwnerFlag",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "NumberCarsOwned",
+            "dataType": "double",
+            "sourceColumn": "NumberCarsOwned",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "AddressLine1",
+            "dataType": "string",
+            "sourceColumn": "AddressLine1",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "AddressLine2",
+            "dataType": "string",
+            "sourceColumn": "AddressLine2",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DateFirstPurchase",
+            "dataType": "dateTime",
+            "sourceColumn": "DateFirstPurchase",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CommuteDistance",
+            "dataType": "string",
+            "sourceColumn": "CommuteDistance",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CreateDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreateDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ModifiedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ModifiedDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ETLDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ETLDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "type": "calculated",
+            "name": "YearlyIncomeCategory",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "IF(dimCustomer[YearlyIncome]<= 40000, \"Rendah\", IF(dimCustomer[YearlyIncome]>40000 && dimCustomer[YearlyIncome]<=  80000, \"Sedang\", IF(dimCustomer[YearlyIncome] > 80000, \"Tinggi\", \"Tinggi\")))"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dimCustomer",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[dimCustomer].* FROM [dbo].[dimCustomer] ",
+              "dataSource": "SqlServer LAPTOP-0M8N7IP6 BIDWH"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Married Customer",
+            "expression": "CALCULATE(DISTINCTCOUNT(dimCustomer[CustomerKey]),dimCustomer[MaritalStatus]=\"M\")"
+          },
+          {
+            "name": "Total Single Customer",
+            "expression": "CALCULATE(DISTINCTCOUNT(dimCustomer[CustomerKey]),dimCustomer[MaritalStatus] = \"S\")"
+          },
+          {
+            "name": "Total Male Customer",
+            "expression": "CALCULATE(DISTINCTCOUNT(dimCustomer[CustomerKey]),dimCustomer[Gender] = \"M\")"
+          },
+          {
+            "name": "Total Female Customer",
+            "expression": " CALCULATE(DISTINCTCOUNT(dimCustomer[CustomerKey]),dimCustomer[Gender]=\"F\")"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[dimCustomer].* FROM [dbo].[dimCustomer] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "dimCustomer"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "dimDate",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey",
+            "sourceProviderType": "Integer",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FullDate",
+            "dataType": "dateTime",
+            "isKey": true,
+            "sourceColumn": "FullDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "DayNumberOfWeek",
+            "dataType": "int64",
+            "sourceColumn": "DayNumberOfWeek",
+            "sourceProviderType": "UnsignedTinyInt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "EnglishDayNameOfWeek",
+            "dataType": "string",
+            "sourceColumn": "EnglishDayNameOfWeek",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "DayNumberOfMonth",
+            "dataType": "int64",
+            "sourceColumn": "DayNumberOfMonth",
+            "sourceProviderType": "UnsignedTinyInt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DayNumberOfYear",
+            "dataType": "int64",
+            "sourceColumn": "DayNumberOfYear",
+            "sourceProviderType": "SmallInt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "WeekNumberOfYear",
+            "dataType": "int64",
+            "sourceColumn": "WeekNumberOfYear",
+            "sourceProviderType": "UnsignedTinyInt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "EnglishMonthName",
+            "dataType": "string",
+            "sourceColumn": "EnglishMonthName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MonthNumberOfYear",
+            "dataType": "int64",
+            "sourceColumn": "MonthNumberOfYear",
+            "sourceProviderType": "UnsignedTinyInt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarQuarter",
+            "dataType": "int64",
+            "sourceColumn": "CalendarQuarter",
+            "sourceProviderType": "UnsignedTinyInt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarYear",
+            "dataType": "string",
+            "sourceColumn": "CalendarYear",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CalendarSemester",
+            "dataType": "int64",
+            "sourceColumn": "CalendarSemester",
+            "sourceProviderType": "UnsignedTinyInt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarYearName",
+            "dataType": "string",
+            "sourceColumn": "CalendarYearName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CalendarSemesterName",
+            "dataType": "string",
+            "sourceColumn": "CalendarSemesterName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CalendarQuarterName",
+            "dataType": "string",
+            "sourceColumn": "CalendarQuarterName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ShortMonthName",
+            "dataType": "string",
+            "sourceColumn": "ShortMonthName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "FullMonthName",
+            "dataType": "string",
+            "sourceColumn": "FullMonthName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "FullDateName",
+            "dataType": "string",
+            "sourceColumn": "FullDateName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "FlagIsWeekly",
+            "dataType": "int64",
+            "sourceColumn": "FlagIsWeekly",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "FlagIsMonthly",
+            "dataType": "int64",
+            "sourceColumn": "FlagIsMonthly",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "NumberOfDay",
+            "dataType": "int64",
+            "sourceColumn": "NumberOfDay",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "WeekNumberOfMonth",
+            "dataType": "int64",
+            "sourceColumn": "WeekNumberOfMonth",
+            "sourceProviderType": "UnsignedTinyInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dimDate",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[dimDate].* FROM [dbo].[dimDate] ",
+              "dataSource": "SqlServer LAPTOP-0M8N7IP6 BIDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[dimDate].* FROM [dbo].[dimDate] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "dimDate"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "dimProduct",
+        "columns": [
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ProductAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "ProductAlternateKey",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "WeightUnitMeasureCode",
+            "dataType": "string",
+            "sourceColumn": "WeightUnitMeasureCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SizeUnitMeasureCode",
+            "dataType": "string",
+            "sourceColumn": "SizeUnitMeasureCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EnglishProductName",
+            "dataType": "string",
+            "sourceColumn": "EnglishProductName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SpanishProductName",
+            "dataType": "string",
+            "sourceColumn": "SpanishProductName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FrenchProductName",
+            "dataType": "string",
+            "sourceColumn": "FrenchProductName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "StandardCost",
+            "dataType": "string",
+            "sourceColumn": "StandardCost",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FinishedGoodsFlag",
+            "dataType": "double",
+            "sourceColumn": "FinishedGoodsFlag",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "Color",
+            "dataType": "string",
+            "sourceColumn": "Color",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SafetyStockLevel",
+            "dataType": "double",
+            "sourceColumn": "SafetyStockLevel",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "ReorderPoint",
+            "dataType": "double",
+            "sourceColumn": "ReorderPoint",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "ListPrice",
+            "dataType": "string",
+            "sourceColumn": "ListPrice",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Size",
+            "dataType": "string",
+            "sourceColumn": "Size",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SizeRange",
+            "dataType": "string",
+            "sourceColumn": "SizeRange",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Weight",
+            "dataType": "string",
+            "sourceColumn": "Weight",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DaysToManufacture",
+            "dataType": "double",
+            "sourceColumn": "DaysToManufacture",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "ProductLine",
+            "dataType": "string",
+            "sourceColumn": "ProductLine",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DealerPrice",
+            "dataType": "string",
+            "sourceColumn": "DealerPrice",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Class",
+            "dataType": "string",
+            "sourceColumn": "Class",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Style",
+            "dataType": "string",
+            "sourceColumn": "Style",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ModelName",
+            "dataType": "string",
+            "sourceColumn": "ModelName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EnglishDescription",
+            "dataType": "string",
+            "sourceColumn": "EnglishDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FrenchDescription",
+            "dataType": "string",
+            "sourceColumn": "FrenchDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ChineseDescription",
+            "dataType": "string",
+            "sourceColumn": "ChineseDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ArabicDescription",
+            "dataType": "string",
+            "sourceColumn": "ArabicDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "HebrewDescription",
+            "dataType": "string",
+            "sourceColumn": "HebrewDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ThaiDescription",
+            "dataType": "string",
+            "sourceColumn": "ThaiDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "GermanDescription",
+            "dataType": "string",
+            "sourceColumn": "GermanDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "JapaneseDescription",
+            "dataType": "string",
+            "sourceColumn": "JapaneseDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TurkishDescription",
+            "dataType": "string",
+            "sourceColumn": "TurkishDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "string",
+            "sourceColumn": "StartDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "string",
+            "sourceColumn": "EndDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CreateDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreateDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ModifiedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ModifiedDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ETLDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ETLDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "sourceColumn": "Status",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dimProduct",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[dimProduct].* FROM [dbo].[dimProduct] ",
+              "dataSource": "SqlServer LAPTOP-0M8N7IP6 BIDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[dimProduct].* FROM [dbo].[dimProduct] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "dimProduct"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "dimProductCategory",
+        "columns": [
+          {
+            "name": "ProductCategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ProductCategoryNameEnglish",
+            "dataType": "string",
+            "sourceColumn": "ProductCategoryNameEnglish",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ProductCategoryNameSpanish",
+            "dataType": "string",
+            "sourceColumn": "ProductCategoryNameSpanish",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ProductCategoryNameFrench",
+            "dataType": "string",
+            "sourceColumn": "ProductCategoryNameFrench",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Source",
+            "dataType": "string",
+            "sourceColumn": "Source",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ETLDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ETLDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dimProductCategory",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[dimProductCategory].* FROM [dbo].[dimProductCategory] ",
+              "dataSource": "SqlServer LAPTOP-0M8N7IP6 BIDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[dimProductCategory].* FROM [dbo].[dimProductCategory] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "dimProductCategory"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "dimProductSubCategory",
+        "columns": [
+          {
+            "name": "Source",
+            "dataType": "string",
+            "sourceColumn": "Source",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ProductSubCategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubCategoryKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EnglishProductSubCategoryName",
+            "dataType": "string",
+            "sourceColumn": "EnglishProductSubCategoryName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SpanishProductSubCategoryName",
+            "dataType": "string",
+            "sourceColumn": "SpanishProductSubCategoryName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "FrenchProductSubCategoryName",
+            "dataType": "string",
+            "sourceColumn": "FrenchProductSubCategoryName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ProductCategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EtlDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EtlDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dimProductSubCategory",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[dimProductSubCategory].* FROM [dbo].[dimProductSubCategory] ",
+              "dataSource": "SqlServer LAPTOP-0M8N7IP6 BIDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[dimProductSubCategory].* FROM [dbo].[dimProductSubCategory] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "dimProductSubCategory"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "dimPromotion",
+        "columns": [
+          {
+            "name": "PromotionKey",
+            "dataType": "int64",
+            "sourceColumn": "PromotionKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PromotionAlternateKey",
+            "dataType": "double",
+            "sourceColumn": "PromotionAlternateKey",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "EnglishPromotionName",
+            "dataType": "string",
+            "sourceColumn": "EnglishPromotionName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SpanishPromotionName",
+            "dataType": "string",
+            "sourceColumn": "SpanishPromotionName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FrenchPromotionName",
+            "dataType": "string",
+            "sourceColumn": "FrenchPromotionName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DiscountPct",
+            "dataType": "double",
+            "sourceColumn": "DiscountPct",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "EnglishPromotionType",
+            "dataType": "string",
+            "sourceColumn": "EnglishPromotionType",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SpanishPromotionType",
+            "dataType": "string",
+            "sourceColumn": "SpanishPromotionType",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FrenchPromotionType",
+            "dataType": "string",
+            "sourceColumn": "FrenchPromotionType",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EnglishPromotionCategory",
+            "dataType": "string",
+            "sourceColumn": "EnglishPromotionCategory",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SpanishPromotionCategory",
+            "dataType": "string",
+            "sourceColumn": "SpanishPromotionCategory",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FrenchPromotionCategory",
+            "dataType": "string",
+            "sourceColumn": "FrenchPromotionCategory",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "string",
+            "sourceColumn": "StartDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "string",
+            "sourceColumn": "EndDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "MinQty",
+            "dataType": "double",
+            "sourceColumn": "MinQty",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "MaxQty",
+            "dataType": "double",
+            "sourceColumn": "MaxQty",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "CreateDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreateDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ModifiedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ModifiedDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ETLDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ETLDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dimPromotion",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[dimPromotion].* FROM [dbo].[dimPromotion] ",
+              "dataSource": "SqlServer LAPTOP-0M8N7IP6 BIDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[dimPromotion].* FROM [dbo].[dimPromotion] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "dimPromotion"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "dimTeritorial",
+        "columns": [
+          {
+            "name": "SalesTerritoryKey",
+            "dataType": "int64",
+            "sourceColumn": "SalesTerritoryKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SalesTerritoryAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "SalesTerritoryAlternateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SalesTerritoryRegion",
+            "dataType": "string",
+            "sourceColumn": "SalesTerritoryRegion",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SalesTerritoryCountry",
+            "dataType": "string",
+            "sourceColumn": "SalesTerritoryCountry",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SalesTerritoryGroup",
+            "dataType": "string",
+            "sourceColumn": "SalesTerritoryGroup",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ETLDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ETLDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dimTeritorial",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[dimTeritorial].* FROM [dbo].[dimTeritorial] ",
+              "dataSource": "SqlServer LAPTOP-0M8N7IP6 BIDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[dimTeritorial].* FROM [dbo].[dimTeritorial] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "dimTeritorial"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "factSales",
+        "columns": [
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "OrderDateKey",
+            "dataType": "int64",
+            "sourceColumn": "OrderDateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DueDateKey",
+            "dataType": "int64",
+            "sourceColumn": "DueDateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ShipDateKey",
+            "dataType": "int64",
+            "sourceColumn": "ShipDateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PromotionKey",
+            "dataType": "int64",
+            "sourceColumn": "PromotionKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CurrencyKey",
+            "dataType": "int64",
+            "sourceColumn": "CurrencyKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SalesTerritoryKey",
+            "dataType": "int64",
+            "sourceColumn": "SalesTerritoryKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SalesOrderNumber",
+            "dataType": "string",
+            "sourceColumn": "SalesOrderNumber",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SalesOrderLineNumber",
+            "dataType": "int64",
+            "sourceColumn": "SalesOrderLineNumber",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "RevisionNumber",
+            "dataType": "int64",
+            "sourceColumn": "RevisionNumber",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "OrderQuantity",
+            "dataType": "int64",
+            "sourceColumn": "OrderQuantity",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPrice",
+            "formatString": "\"Rp\"#,0;-\"Rp\"#,0;\"Rp\"#,0",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"Rp English (United States)\" Symbol=\"Rp\" PositivePattern=\"0\" NegativePattern=\"1\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "ExtendedAmount",
+            "dataType": "decimal",
+            "sourceColumn": "ExtendedAmount",
+            "formatString": "\"Rp\"#,0;-\"Rp\"#,0;\"Rp\"#,0",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"Rp English (United States)\" Symbol=\"Rp\" PositivePattern=\"0\" NegativePattern=\"1\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "SalesAmount",
+            "dataType": "decimal",
+            "sourceColumn": "SalesAmount",
+            "formatString": "\"Rp\"#,0;-\"Rp\"#,0;\"Rp\"#,0",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"Rp English (United States)\" Symbol=\"Rp\" PositivePattern=\"0\" NegativePattern=\"1\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "TaxAmount",
+            "dataType": "decimal",
+            "sourceColumn": "TaxAmount",
+            "formatString": "\"Rp\"#,0;-\"Rp\"#,0;\"Rp\"#,0",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"Rp English (United States)\" Symbol=\"Rp\" PositivePattern=\"0\" NegativePattern=\"1\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "UnitPriceDiscountPct",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceDiscountPct",
+            "formatString": "\"Rp\"#,0;-\"Rp\"#,0;\"Rp\"#,0",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"Rp English (United States)\" Symbol=\"Rp\" PositivePattern=\"0\" NegativePattern=\"1\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "DiscountAmount",
+            "dataType": "decimal",
+            "sourceColumn": "DiscountAmount",
+            "formatString": "\"Rp\"#,0;-\"Rp\"#,0;\"Rp\"#,0",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"Rp English (United States)\" Symbol=\"Rp\" PositivePattern=\"0\" NegativePattern=\"1\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Freight",
+            "dataType": "decimal",
+            "sourceColumn": "Freight",
+            "formatString": "\"Rp\"#,0;-\"Rp\"#,0;\"Rp\"#,0",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"Rp English (United States)\" Symbol=\"Rp\" PositivePattern=\"0\" NegativePattern=\"1\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "OrderDate",
+            "dataType": "dateTime",
+            "sourceColumn": "OrderDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "DueDate",
+            "dataType": "dateTime",
+            "sourceColumn": "DueDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ShipDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ShipDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ETLDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ETLDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "factSales",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[factSales].* FROM [dbo].[factSales] ",
+              "dataSource": "SqlServer LAPTOP-0M8N7IP6 BIDWH 4"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "TotalSales",
+            "expression": "SUM(factSales[SalesAmount])"
+          },
+          {
+            "name": "Total Sales Qty",
+            "expression": " sum(factSales[OrderQuantity])"
+          },
+          {
+            "name": "TotalCustomerTransaction",
+            "expression": [
+              "count(dimCustomer[CustomerKey])",
+              ""
+            ]
+          },
+          {
+            "name": "Total Product Sold",
+            "expression": [
+              " DISTINCTCOUNT(dimProduct[ProductKey])",
+              ""
+            ]
+          },
+          {
+            "name": "SalesLastYear",
+            "expression": [
+              "CALCULATE([TotalSales],SAMEPERIODLASTYEAR(dimDate[FullDate]))",
+              ""
+            ]
+          },
+          {
+            "name": "TotalExtendedAmount",
+            "expression": "SUM(factSales[ExtendedAmount])"
+          },
+          {
+            "name": "Total Unit Price",
+            "expression": "Sum(factSales[SalesAmount])"
+          },
+          {
+            "name": "Total Freight",
+            "expression": "SUM(factSales[Freight])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[factSales].* FROM [dbo].[factSales] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "factSales"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "d56aa44c-348c-4749-bb97-72229dd1899b",
+        "fromTable": "dimProduct",
+        "fromColumn": "ProductSubcategoryKey",
+        "toTable": "dimProductSubCategory",
+        "toColumn": "ProductSubCategoryKey"
+      },
+      {
+        "name": "6afc040f-5534-40bb-af17-ede9429e8c92",
+        "fromTable": "dimProductSubCategory",
+        "fromColumn": "ProductCategoryKey",
+        "toTable": "dimProductCategory",
+        "toColumn": "ProductCategoryKey"
+      },
+      {
+        "name": "6453aab0-b14c-4666-8a95-6d87046b2383",
+        "fromTable": "factSales",
+        "fromColumn": "CurrencyKey",
+        "toTable": "dimCurrency",
+        "toColumn": "CurrencyKey"
+      },
+      {
+        "name": "c0cac5ef-7547-45ca-9e81-aaca050c5b00",
+        "fromTable": "factSales",
+        "fromColumn": "CustomerKey",
+        "toTable": "dimCustomer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "246900bf-e7b3-4728-9b8e-cd55dbc4cfb1",
+        "fromTable": "factSales",
+        "fromColumn": "ProductKey",
+        "toTable": "dimProduct",
+        "toColumn": "ProductKey"
+      },
+      {
+        "name": "d9dc1294-a76e-431a-85a5-75e817aaeda7",
+        "fromTable": "factSales",
+        "fromColumn": "PromotionKey",
+        "toTable": "dimPromotion",
+        "toColumn": "PromotionKey"
+      },
+      {
+        "name": "b1bff58e-8ca4-4f13-8443-ca7a49429500",
+        "fromTable": "factSales",
+        "fromColumn": "SalesTerritoryKey",
+        "toTable": "dimTeritorial",
+        "toColumn": "SalesTerritoryKey"
+      },
+      {
+        "name": "3259410b-0d1b-4d22-af04-7c16898e20e0",
+        "fromTable": "factSales",
+        "fromColumn": "OrderDateKey",
+        "toTable": "dimDate",
+        "toColumn": "DateKey"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  }
+}

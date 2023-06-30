@@ -1,0 +1,14 @@
+C:\Users\1465\source\repos\BIOLAPTAB\BIOLAPTAB\bin\Model.asdatabase
+C:\Users\1465\source\repos\BIOLAPTAB\BIOLAPTAB\bin\Model.deploymenttargets
+C:\Users\1465\source\repos\BIOLAPTAB\BIOLAPTAB\bin\Model.deploymentoptions
+C:\Users\1465\source\repos\BIOLAPTAB\BIOLAPTAB\obj\Development\BIOLAPTAB.smproj.CoreCompileInputs.cache
+C:\Users\1465\source\repos\BIOLAPTAB\BIOLAPTAB\obj\Development\Model.asdatabase
+C:\Users\1465\source\repos\BIOLAPTAB\BIOLAPTAB\obj\Development\Model.deploymentoptions
+C:\Users\1465\source\repos\BIOLAPTAB\BIOLAPTAB\obj\Development\Model.deploymenttargets
+C:\Users\1465\Desktop\BC27BI_Aditya Dwinugraha\BIOLAPTAB\BIOLAPTAB\bin\Model.asdatabase
+C:\Users\1465\Desktop\BC27BI_Aditya Dwinugraha\BIOLAPTAB\BIOLAPTAB\bin\Model.deploymenttargets
+C:\Users\1465\Desktop\BC27BI_Aditya Dwinugraha\BIOLAPTAB\BIOLAPTAB\bin\Model.deploymentoptions
+C:\Users\1465\Desktop\BC27BI_Aditya Dwinugraha\BIOLAPTAB\BIOLAPTAB\obj\Development\BIOLAPTAB.smproj.CoreCompileInputs.cache
+C:\Users\1465\Desktop\BC27BI_Aditya Dwinugraha\BIOLAPTAB\BIOLAPTAB\obj\Development\Model.asdatabase
+C:\Users\1465\Desktop\BC27BI_Aditya Dwinugraha\BIOLAPTAB\BIOLAPTAB\obj\Development\Model.deploymentoptions
+C:\Users\1465\Desktop\BC27BI_Aditya Dwinugraha\BIOLAPTAB\BIOLAPTAB\obj\Development\Model.deploymenttargets
